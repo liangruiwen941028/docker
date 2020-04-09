@@ -8,6 +8,7 @@
 运行方式 ./start 运行这个脚本
 
 查看容器运行
+
 [root@shenzhen test]# docker ps 
 CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                               NAMES
 56cc37c3e47b        docker.io/mysql:5.7   "docker-entrypoint..."   56 minutes ago      Up 56 minutes       0.0.0.0:3306->3306/tcp, 33060/tcp   master
@@ -15,8 +16,8 @@ CONTAINER ID        IMAGE                 COMMAND                  CREATED      
 
 
 进入容器
-docker exec -it master /bin/bash  进入主库容器
-docker exec -it node /bin/bash    进入从库容器
+#docker exec -it master /bin/bash  进入主库容器
+#docker exec -it node /bin/bash    进入从库容器
 
 进入数据库mysql -uroot -p123456
 主库查看状态
