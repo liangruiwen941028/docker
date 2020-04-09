@@ -1,0 +1,27 @@
+version: '2'
+services:
+     mysql_mster:
+         image: docker.io/mysql:5.7
+         container_name: master
+         depends_on:
+             - mysql_node
+         ports:
+             - 3306:3306
+         volumes:
+             - ./master_my.cnf:/etc/mysql/my.cnf
+             - ./mysql_master:/var/lib/mysql
+         environment:
+             MYSQL_ROOT_PASSWORD: 123456
+
+     mysql_node:
+         image: docker.io/mysql:5.7
+         container_name: node
+         ports:
+             - 3307:3306
+         volumes:
+             - ./node_my.cnf:/etc/mysql/my.cnf
+             - ./mysql_node:/var/lib/mysql
+         environment:
+             MYSQL_ROOT_PASSWORD: 123456
+
+

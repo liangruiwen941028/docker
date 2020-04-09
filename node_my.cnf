@@ -1,0 +1,4 @@
+[mysqld]
+server_id = 2
+datadir=/var/lib/mysql
+binlog-ignore-db=mysql
